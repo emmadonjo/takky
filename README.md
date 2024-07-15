@@ -1,4 +1,4 @@
-# Tasky
+# Takky
 
 You simple task mgt app.
 
@@ -19,7 +19,7 @@ You simple task mgt app.
 
 ### Set up from Github
 
--   Clone project to your machine - `git clone git@github.com:emmadonjo/tasky.git`
+-   Clone project to your machine - `git clone git@github.com:emmadonjo/takky.git`
 -   Install laravel dependencies with `composer install`
 -   Install frontend pakcages - `npm install`
 -   Copy `.env.example` to `.env` - `cp .env.example .env` and update the values as applicable. Notably, the **database** values
