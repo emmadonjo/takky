@@ -16,7 +16,8 @@ export default function CreateTask({ projects }) {
         setData,
         errors,
         post,
-        clearErrors
+        clearErrors,
+        reset
     } = useForm({
         name: '',
         project_id: ''
@@ -27,7 +28,10 @@ export default function CreateTask({ projects }) {
 
         clearErrors();
         post(route('tasks.store'), {
-            onSuccess: (page) => setShowModal(false)
+            onSuccess: (page) => {
+                setShowModal(false)
+                reset();
+            }
         });
     };
     return (

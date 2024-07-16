@@ -17,6 +17,9 @@ export default function DeleteTask({
         e.preventDefault();
 
         destroy(route('tasks.destroy', task.id), {
+            onSuccess: (page) => {
+                setShowModal(false);
+            },
             preserveScroll: true
         });
     }

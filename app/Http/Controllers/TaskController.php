@@ -66,6 +66,11 @@ class TaskController extends Controller
     {
         abort_unless($task->owner_id === auth()->id(), 403);
 
+        // update the priority of other tasks
+        $max = Task::max('priority');
+        Task::whereBetween('priority', [$task->priority + 1, $max])
+            ->decrement('priority');
+
         $task->delete();
 
         session()->flash('flash', [
